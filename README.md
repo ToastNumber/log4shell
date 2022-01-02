@@ -72,11 +72,11 @@ You can **search** the directory like a database too. E.g. to lookup the entry f
 
 I used **[OpenLDAP](https://www.openldap.org/)** to get a stand-alone LDAP daemon called **slapd**. The Makefile customizes the database to use "example.com" as the root domain instead of "my-domain.com" and adds an "include" to import the java schema in addition to the core schema. 
 
-In order to **modify** the database we have an admin user with the distinguished name `cn=Manager,dc=example,dc=com`. The admin user and password are configured when we originally created the database with `/usr/local/etc/openldap/slapd.ldif`. When you execute commands you can specify the password inline with `-w <password>` and specify the admin user's dn with `-D <dn>`. E.g. `ldapadd -w secret -D "cn=Manager,dc=example,dc=com" -f ldap/log4shell.ldif` will add the entries in `log4shell.ldif` to the database. The default configuration allows **read-only access to all users**.
+In order to **modify** the database we have an admin user with the distinguished name `cn=Manager,dc=example,dc=com`. The admin user and password were configured when we originally created the database with `/usr/local/etc/openldap/slapd.ldif`. When you execute commands you can specify the password inline with `-w <password>` and specify the admin user's dn with `-D <dn>`. E.g. `ldapadd -w secret -D "cn=Manager,dc=example,dc=com" -f ldap/log4shell.ldif` will add the entries in `log4shell.ldif` to the database. The default configuration allows **read-only access to all users**.
 
 
 ## Notes
 
 * Fun fact: AWS EC2 instances have a process running that automatically patches vulnerable applications! If you run `ps -ef | grep log4j-cve` you'll see `/usr/bin/log4j-cve-2021-44228-hotpatch` is running. This means JNDI lookups will print `Patched JndiLookup::lookup()` instead. Read more here: https://aws.amazon.com/blogs/opensource/hotpatch-for-apache-log4j/
-* The [`ldap/`](./ldap) folder has some helper scripts for querying slapd (the LDP directory server)
+* The [`ldap/`](./ldap) folder has some helper scripts for querying slapd (the LDAP directory server)
 
