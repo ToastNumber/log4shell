@@ -1,6 +1,6 @@
 # Log4Shell
 
-This repo contains code to demonstrate how the remote code execution vulnerability in log4j works. Read more here: https://www.lunasec.io/docs/blog/log4j-zero-day/ and here https://nvd.nist.gov/vuln/detail/CVE-2021-44228.
+This repo contains code to demonstrate how the remote code execution vulnerability in log4j works. **For educational purposes only**. Read more here: https://www.lunasec.io/docs/blog/log4j-zero-day/ and here https://nvd.nist.gov/vuln/detail/CVE-2021-44228.
 
 ## How it works
 
