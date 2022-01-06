@@ -25,12 +25,12 @@ This repo contains code to demonstrate how the remote code execution vulnerabili
 
 ## How to run
 
-1. Install the prerequisites. Adjust the command for your OS.
+1. Either build an image from the Dockerfile, e.g. `docker build . -t local/log4shell` then run it, e.g `docker run -it local/log4shell sh` OR run the following (adjust the command for your OS):
     ```
     sudo yum install gcc java-1.8.0-openjdk-devel maven -y
+    make customize-config
     ```
-2. Run `make customize-config` OR build an image from the Dockerfile, e.g. `docker build . -t local/log4shell` then run it, e.g `docker run -it local/log4shell sh`.
-3. Run
+2. Run
     ```
     make start-slapd
     make add-log4shell-entry
@@ -38,6 +38,7 @@ This repo contains code to demonstrate how the remote code execution vulnerabili
     make start-http-server
     make run-exploit # You should see "WARNING: This is an arbitrary command run from Log4Shell.java!" in the logs.
     ```
+
 
 ## LDAP
 
